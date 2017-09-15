@@ -1,0 +1,81 @@
+//
+//  Prefix header
+//
+//  The contents of this file are implicitly included at the beginning of every source file.
+//
+
+#import <Availability.h>
+#import "GlobeConst.h"
+#import "UINavigationItem+CustomBarButtonItem.h"
+#import "XLBaseTableController.h"
+#import "HttpQwhAction.h"
+#import "SVProgressHUD.h"
+#import "MJExtension.h"
+#import "MJRefresh.h"
+#import "UIView+Additions.h"
+#import "UIImageView+WebCache.h"
+#import "WBLoadingView.h"
+#import "QWHPublic.h"
+QWHPublic *pub;
+
+#ifndef __IPHONE_3_0
+#warning "This project uses features only available in iOS SDK 3.0 and later."
+#endif
+
+
+#ifdef __OBJC__
+
+#ifdef DEBUG
+#define NSLog(...) NSLog(__VA_ARGS__)
+#define debugMethod() NSLog(@"%s", __func__)
+#else
+#define NSLog(...)
+#define debugMethod()
+#endif
+
+#define kHttpSer_new @"https://mobile.itycz.com/EducationInformation/"
+
+
+#define kThemeColor [UIColor colorWithRed:74/255.0 green:184/255.0 blue:72/255.0 alpha:1]
+#define kRedColor [UIColor colorWithRed:255 / 255.0 green:122 / 255.0 blue:112 / 255.0 alpha:1]
+#define kGreenColor [UIColor colorWithRed:132/255.0 green:210/255.0 blue:97/255.0 alpha:1]
+#define kBlueColor [UIColor colorWithRed:0/255.0 green:181/255.0 blue:207/255.0 alpha:1]
+#define kMagentaColor [UIColor colorWithRed:165/255.0 green:105/255.0 blue:200/255.0 alpha:1]
+#define kYellowColor [UIColor colorWithRed:255/255.0 green:214/255.0 blue:0/255.0 alpha:1]
+#define kDarkGreenColor [UIColor colorWithRed:96/255.0 green:125/255.0 blue:139/255.0 alpha:1]
+#define kOrangeColor [UIColor colorWithRed:255/255.0 green:153/255.0 blue:0/255.0 alpha:1]
+
+#define kWhiteColorSystem [UIColor whiteColor]
+#define kWhiteColor [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1]
+#define kWhiteLightColor [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1]
+#define kWhiteDarkColor [UIColor colorWithRed:221/255.0 green:221/255.0 blue:221/255.0 alpha:1]
+#define kLightGreyColor [UIColor colorWithRed:153/255.0 green:153/255.0 blue:153/255.0 alpha:1]
+#define kDarkGreyColor [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1]
+#define kBlackColor [UIColor colorWithRed:51/255.0 green:51/255.0 blue:51/255.0 alpha:1]
+
+#define Font(n) [UIFont fontWithName:@"Arial" size:n]
+#define ReplaceString(string) [string stringByReplacingOccurrencesOfString:@"€" withString:@""]
+
+#define kHeaderImg [UIImage imageNamed:@"default_portrait"]
+#define kPlaceholder [UIImage imageNamed:@"club_photo_download_wait.jpg"]
+
+#define IS_IOS_8 ([[[UIDevice currentDevice]systemVersion]floatValue] >= 8.0)
+//获取设备的物理高度
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+//获取设备的物理宽度
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define UISreenWidthScale   ScreenWidth / 375 //以iphone6 尺寸为标准
+#define UISreenHeightScale  ScreenHeight / 667
+
+#define DocumentPath [NSHomeDirectory() stringByAppendingPathComponent:@"Documents/"]
+#define TmpPath [NSHomeDirectory() stringByAppendingPathComponent:@"tmp/"]
+
+#define __async_opt__  dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0),
+#define __async_main__ dispatch_async(dispatch_get_main_queue(),
+
+#define kDefineWeakSelf __weak __typeof(self) weakSelf = self
+
+
+#endif
+
+
