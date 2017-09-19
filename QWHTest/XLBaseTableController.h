@@ -15,6 +15,9 @@
 //是否显示空数据页面  默认为显示
 @property(nonatomic,assign) BOOL isShowEmptyData;
 
+//是否GroupTableView 默认为普通table
+@property(nonatomic,assign) BOOL isGroupTable;
+
 //空数据页面的title -- 可不传，默认为：亲，暂无任何数据!
 @property(nonatomic,strong) NSString *noDataTitle;
 //空数据页面的图片 -- 可不传，默认图片为：NoData
@@ -27,5 +30,5 @@
 @property(nonatomic,strong) NSString *btnTitle;
 @property(nonatomic,strong) NSString *btnImgName;
 -(void)buttonEvent;
-
+- (id)initWithGroupTabletype:(BOOL)isGroupTable;
 @end

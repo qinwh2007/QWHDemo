@@ -14,16 +14,40 @@
 @end
 
 @implementation XLBaseTableController
+- (id)initWithGroupTabletype:(BOOL)isGroupTable
+{
+    self = [super init];
+    if (self) {
+        _isGroupTable = isGroupTable;
+    }
+    return self;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.isShowEmptyData = YES;
     
     [self.view addSubview:self.theTable];
-    self.theTable.backgroundColor = kWhiteColorSystem;
+    self.theTable.backgroundColor = kWhiteLightColor;
     self.theTable.emptyDataSetSource = self;
     self.theTable.emptyDataSetDelegate = self;
     
+}
+
+-(UITableView *)theTable
+{
+    if(_theTable == nil)
+    {
+        UITableViewStyle tableStyle = _isGroupTable ? UITableViewStyleGrouped : UITableViewStylePlain;
+        _theTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height) style:tableStyle];
+//        _theTable.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 1)];
+//        _theTable.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 1)];
+        
+        _theTable.showsVerticalScrollIndicator = NO;
+        _theTable.showsHorizontalScrollIndicator = NO;
+    }
+    
+    return _theTable;
 }
 
 -(UIImage *)imageForEmptyDataSet:(UIScrollView *)scrollView
@@ -91,26 +115,12 @@
     [self buttonEvent];
 }
 
-#pragma mark 按钮事件
+#pragma mark 重试按钮事件
 -(void)buttonEvent
 {
     
 }
 
--(UITableView *)theTable
-{
-    if(_theTable == nil)
-    {
-        _theTable = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [[UIScreen mainScreen] bounds].size.height) style:UITableViewStyleGrouped];
-        _theTable.tableFooterView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 1)];
-        _theTable.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, 1)];
-        
-        _theTable.showsVerticalScrollIndicator = NO;
-        _theTable.showsHorizontalScrollIndicator = NO;
-    }
-    
-    return _theTable;
-}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

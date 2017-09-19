@@ -7,6 +7,8 @@
 #import <Availability.h>
 #import "GlobeConst.h"
 #import "UINavigationItem+CustomBarButtonItem.h"
+#import "UIScrollView+EmptyDataSet.h"
+
 #import "XLBaseTableController.h"
 #import "HttpQwhAction.h"
 #import "SVProgressHUD.h"
@@ -16,6 +18,8 @@
 #import "UIImageView+WebCache.h"
 #import "WBLoadingView.h"
 #import "QWHPublic.h"
+#import <FFToast/FFToast.h>
+
 QWHPublic *pub;
 
 #ifndef __IPHONE_3_0
@@ -47,7 +51,7 @@ QWHPublic *pub;
 
 #define kWhiteColorSystem [UIColor whiteColor]
 #define kWhiteColor [UIColor colorWithRed:245/255.0 green:245/255.0 blue:245/255.0 alpha:1]
-#define kWhiteLightColor [UIColor colorWithRed:240/255.0 green:240/255.0 blue:240/255.0 alpha:1]
+#define kWhiteLightColor [UIColor colorWithRed:236/255.0 green:236/255.0 blue:236/255.0 alpha:1]
 #define kWhiteDarkColor [UIColor colorWithRed:221/255.0 green:221/255.0 blue:221/255.0 alpha:1]
 #define kLightGreyColor [UIColor colorWithRed:153/255.0 green:153/255.0 blue:153/255.0 alpha:1]
 #define kDarkGreyColor [UIColor colorWithRed:102/255.0 green:102/255.0 blue:102/255.0 alpha:1]
@@ -75,6 +79,13 @@ QWHPublic *pub;
 
 #define kDefineWeakSelf __weak __typeof(self) weakSelf = self
 
+#define kFont18 [UIFont systemFontOfSize:18]
+#define kFont16 [UIFont systemFontOfSize:16]
+#define kFont15 [UIFont systemFontOfSize:15]
+#define kFont14 [UIFont systemFontOfSize:14]
+#define kFont13 [UIFont systemFontOfSize:13]
+#define kFont12 [UIFont systemFontOfSize:12]
+#define kFont10 [UIFont systemFontOfSize:10]
 
 #endif
 

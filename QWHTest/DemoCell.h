@@ -21,8 +21,6 @@
     UILabel *nameLab;
     UILabel *timeLab;
     UIImageView *headerImgv;
-    UIImageView *flagImgv;
-    UIButton *cancelDeviceShowBtn;
 }
 
 @property (strong, nonatomic) QWHNotiModel *notiModel;

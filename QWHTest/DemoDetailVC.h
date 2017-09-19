@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface DemoDetailVC : UIViewController
+@interface DemoDetailVC : XLBaseTableController
 @property (retain, nonatomic) UIColor *color;
 @end

@@ -14,6 +14,7 @@ pod 'Reachability', '~> 3.2'
 pod 'GzwTableViewLoading', '~> 1.1.0'
 pod 'MLeaksFinder'
 pod 'MJExtension', '~> 3.0.13'
+pod 'FFToast', '~> 1.1.0'
 
 
 

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2D410E3F1F70BB08006D2D5D /* corner_circle_white@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D410E3E1F70BB08006D2D5D /* corner_circle_white@2x.png */; };
+		2D410E411F70BB5F006D2D5D /* corner_circle_gray@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2D410E401F70BB5F006D2D5D /* corner_circle_gray@2x.png */; };
 		2D45CB2D1F6BC9C700D428F0 /* IMG_1927.JPG in Resources */ = {isa = PBXBuildFile; fileRef = 2D45CB2C1F6BC9C700D428F0 /* IMG_1927.JPG */; };
 		2D4D7E571F6916B000074471 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D7E561F6916B000074471 /* main.m */; };
 		2D4D7E5A1F6916B000074471 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2D4D7E591F6916B000074471 /* AppDelegate.m */; };
@@ -73,6 +75,8 @@
 
 /* Begin PBXFileReference section */
 		25B03C3ADA42B445A050C220 /* Pods-QWHTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QWHTest.release.xcconfig"; path = "Pods/Target Support Files/Pods-QWHTest/Pods-QWHTest.release.xcconfig"; sourceTree = "<group>"; };
+		2D410E3E1F70BB08006D2D5D /* corner_circle_white@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "corner_circle_white@2x.png"; sourceTree = "<group>"; };
+		2D410E401F70BB5F006D2D5D /* corner_circle_gray@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "corner_circle_gray@2x.png"; sourceTree = "<group>"; };
 		2D45CB2C1F6BC9C700D428F0 /* IMG_1927.JPG */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = IMG_1927.JPG; sourceTree = "<group>"; };
 		2D4D7E521F6916B000074471 /* QWHTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QWHTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2D4D7E561F6916B000074471 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -214,10 +218,10 @@
 				2D4D7E5C1F6916B000074471 /* ViewController.m */,
 				2D4D7EE11F692E1000074471 /* DemoDataListView.h */,
 				2D4D7EE21F692E1000074471 /* DemoDataListView.m */,
-				2D8B1DF31F6A2D0E00533A83 /* DemoDetailVC.h */,
-				2D8B1DF41F6A2D0E00533A83 /* DemoDetailVC.m */,
 				2D4D7EE31F692E1000074471 /* DemoCell.h */,
 				2D4D7EE41F692E1000074471 /* DemoCell.m */,
+				2D8B1DF31F6A2D0E00533A83 /* DemoDetailVC.h */,
+				2D8B1DF41F6A2D0E00533A83 /* DemoDetailVC.m */,
 				2D4D7EE71F692E2300074471 /* QWHNotiModel.h */,
 				2D4D7EE81F692E2300074471 /* QWHNotiModel.m */,
 				2D4D7E611F6916B000074471 /* Assets.xcassets */,
@@ -338,6 +342,8 @@
 		2D4D7F261F6935EC00074471 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				2D410E401F70BB5F006D2D5D /* corner_circle_gray@2x.png */,
+				2D410E3E1F70BB08006D2D5D /* corner_circle_white@2x.png */,
 				2D45CB2C1F6BC9C700D428F0 /* IMG_1927.JPG */,
 				2D4D7F271F69361000074471 /* tab_message_pre@2x.png */,
 				2D4D7F281F69361000074471 /* tab_apply_pre@2x.png */,
@@ -432,6 +438,7 @@
 			files = (
 				2D4D7F361F69361000074471 /* feed_img@2x.png in Resources */,
 				2D4D7F341F69361000074471 /* back_img@3x.png in Resources */,
+				2D410E411F70BB5F006D2D5D /* corner_circle_gray@2x.png in Resources */,
 				2D4D7EA11F6917CA00074471 /* 小熊斜侧跑0007@2x.png in Resources */,
 				2D4D7EA01F6917CA00074471 /* 小熊斜侧跑0005@3x.png in Resources */,
 				2D4D7E9E1F6917CA00074471 /* 小熊斜侧跑0003@3x.png in Resources */,
@@ -441,6 +448,7 @@
 				2D4D7F2F1F69361000074471 /* tab_message_pre@2x.png in Resources */,
 				2D4D7E9D1F6917CA00074471 /* 小熊斜侧跑0003@2x.png in Resources */,
 				2D4D7F331F69361000074471 /* crazy@3x.png in Resources */,
+				2D410E3F1F70BB08006D2D5D /* corner_circle_white@2x.png in Resources */,
 				2D4D7E951F6917CA00074471 /* 小熊斜侧跑00011@2x.png in Resources */,
 				2D4D7E971F6917CA00074471 /* 小熊斜侧跑00013@2x.png in Resources */,
 				2D4D7EA31F6917CA00074471 /* 小熊斜侧跑0009@2x.png in Resources */,

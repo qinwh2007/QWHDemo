@@ -10,6 +10,4 @@
 
 @interface DemoDataListView : XLBaseTableController
 
-@property (assign, nonatomic) BOOL isSend;
-
 @end

@@ -51,20 +51,11 @@
     [[HttpBaseAction defaultManager] GET:[str stringByAddingPercentEscapesUsingEncoding:NSUTF8StringEncoding] parameters:nil progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
-        NSInteger code = response.statusCode;
-        NSLog(@"response statusCode is %zd",code);
-        
-        NSLog(@"%@",[[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding]);
         
         NSDictionary *responseDic = [self jsonToDictionary:[[NSString alloc]initWithData:responseObject encoding:NSUTF8StringEncoding]];
         block(responseDic,nil);
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         NSHTTPURLResponse *response = (NSHTTPURLResponse *)task.response;
-//        NSDictionary *headDic = response.allHeaderFields;
-        NSInteger code = response.statusCode;
-        NSLog(@"response statusCode is %zd",code);
-        //        failure(task,error);
         block(nil,error);
     }];
 }

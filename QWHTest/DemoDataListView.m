@@ -7,7 +7,6 @@
 //
 
 #import "DemoDataListView.h"
-#import "UIScrollView+EmptyDataSet.h"
 
 #import "QWHNotiModel.h"
 #import "DemoCell.h"
@@ -34,6 +33,7 @@
     self.btnTitle = @"点击重试";
     self.theTable.dataSource = self;
     self.theTable.delegate = self;
+    self.theTable.separatorStyle = UITableViewCellSeparatorStyleNone;
     [self.theTable addHeaderWithTarget:self action:@selector(getData)];
     [self.theTable addFooterWithTarget:self action:@selector(getMoreData)];
     [self getData];
@@ -42,7 +42,6 @@
 -(void)buttonEvent
 {
     [self getData];
-    NSLog(@"马上重试");
 }
 
 - (void)getData
@@ -60,34 +59,10 @@
     [self makeRequest];
 }
 
-- (void)handleResponseError:(NSInteger)errCode
-{
-    if(errCode == -1011){
-        if (!_dataArr.count) {
-            self.noDataImgName = @"NoData";
-            self.noDataTitle = @"服务器开小差了，稍候再来吧";
-            [self.theTable reloadEmptyDataSet];
-        }
-    }else if(errCode == -1001){
-        if (!_dataArr.count) {
-            self.noDataImgName = @"NoData";
-            self.noDataTitle = @"请求超时了，稍候再来吧";
-            [self.theTable reloadEmptyDataSet];
-        }
-    }else if(errCode == -1009){
-        if (!_dataArr.count) {
-            self.noDataImgName = @"NoOrderData";
-            self.noDataTitle = @"世界上最遥远在距离就是断网";
-            [self.theTable reloadEmptyDataSet];
-        }
-    }
-    [self requestDone];
-}
-
 - (NSArray *)formatTestDataWithPage:(int)curpage size:(int)size
 {
     NSMutableArray *arr = [[NSMutableArray alloc] init];
-    [NSThread sleepForTimeInterval:1.5];
+    [NSThread sleepForTimeInterval:0.5];
     if (curpage > 0) {
         size = 2;
     }
@@ -100,7 +75,7 @@
 
 - (void)makeRequest
 {
-    [HttpQwhAction requestNoticeListWithPage:page pageSize:pageSize isMySend:_isSend complete:^(id result,NSError *error){
+    [HttpQwhAction requestNoticeListWithPage:page pageSize:pageSize isMySend:0 complete:^(id result,NSError *error){
         
         if (!error) {
             [self handleResponseError:error.code];
@@ -162,6 +137,30 @@
      */
 }
 
+- (void)handleResponseError:(NSInteger)errCode
+{
+    if(errCode == -1011){
+        if (!_dataArr.count) {
+            self.noDataImgName = @"NoData";
+            self.noDataTitle = @"服务器开小差了，稍候再来吧";
+            [self.theTable reloadEmptyDataSet];
+        }
+    }else if(errCode == -1001){
+        if (!_dataArr.count) {
+            self.noDataImgName = @"NoData";
+            self.noDataTitle = @"请求超时了，稍候再来吧";
+            [self.theTable reloadEmptyDataSet];
+        }
+    }else if(errCode == -1009){
+        if (!_dataArr.count) {
+            self.noDataImgName = @"NoOrderData";
+            self.noDataTitle = @"世界上最遥远在距离就是断网";
+            [self.theTable reloadEmptyDataSet];
+        }
+    }
+    [self requestDone];
+}
+
 - (void)requestDone
 {
     [self.theTable headerEndRefreshing];
@@ -198,6 +197,7 @@
     DemoCell *cell = [tableView dequeueReusableCellWithIdentifier:adifier];
     if (cell == nil) {
         cell = [[DemoCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:adifier];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
     cell.notiModel = _dataArr[indexPath.section];
     cell.theIndexpath = indexPath;
@@ -219,13 +219,11 @@
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    return 153;
+    return 105;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    
     DemoCell *cell = (DemoCell *)[tableView cellForRowAtIndexPath:indexPath];
     DemoDetailVC *vc = [[DemoDetailVC alloc] init];
     vc.color = cell.backgroundColor;
@@ -244,10 +242,6 @@
     return UITableViewCellEditingStyleDelete;
 }
 
-- (void)tableView:(UITableView *)tableView didEndEditingRowAtIndexPath:(nullable NSIndexPath *)indexPath
-{
-    
-}
 
 - (NSArray<UITableViewRowAction *> *)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath{
     //删除
@@ -260,13 +254,10 @@
 
 }
 
-#pragma mark --------------cellDelegate -----------
-
 - (void)deleteActionMsg:(NSIndexPath *)indexp
 {
     [_dataArr removeObjectAtIndex:indexp.row];
     [self.theTable deleteSections:[NSIndexSet indexSetWithIndex:indexp.section] withRowAnimation:UITableViewRowAnimationLeft];
-    
 }
 
 

@@ -40,7 +40,7 @@
 
 - (UIViewController *)bulidRootVC
 {
-    DemoDataListView*vc0 = [[DemoDataListView alloc] init];
+    DemoDataListView*vc0 = [[DemoDataListView alloc] initWithGroupTabletype:YES];
     vc0.title = @"animation";
     vc0.tabBarItem.title = @"首页";
     vc0.tabBarItem.image = [UIImage imageNamed:@"crazy"];

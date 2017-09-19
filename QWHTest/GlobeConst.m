@@ -11,15 +11,15 @@
 @implementation GlobeConst
 
     NSString *const kUserAgeKeyTest = @"XXXXX.userAge";
-    int const kCellLeft = 15;
-    int const kCellTop = 10;
-    int const kDistantVer = 10;
+    int const kCellLeft = 12;
+    int const kCellTop = 18;
+    int const kDistantVer = 15;
     int const kDistantHor = 8;
 
     int const PAGE = 0;
     int const PAGESIZE = 20;
 
-    int const kTimeOut = 30;     //请求超时时间；
+    int const kTimeOut = 10;     //请求超时时间；
     int const kRefreshInterval = 60; //
     int const kUpladIamgeMaxCount = 9;    //每次上传最多照片个数；
     int const KHeaderSelectionHeight = 36;
